@@ -11,20 +11,14 @@
         var air_conditioning = function(currentTemp, isFunctional, desiredTemp){
             if(isFunctional == true && (currentTemp > desiredTemp)){
                 console.log("Turn on the A/C Please");
-
-            }
-            else if(isFunctional == false && (currentTemp > desiredTemp)){
-            //else if(!isFunctional && (currentTemp > desiredTemp)){}
+            } else if(isFunctional == false && (currentTemp > desiredTemp)){
+              //else if(!isFunctional && (currentTemp > desiredTemp)){}
                 console.log("Fix the A/C now! It's hot!");
-
-            }
-            else if(isFunctional == false && (currentTemp < desiredTemp)){
+            } else if(isFunctional == false && (currentTemp < desiredTemp)){
                 console.log("Fix the A/C whenever you have the chance... It's cool...");
-            }
-            else{
+            } else{
                 console.log("It's cozy.");
             }
-
         }
     
     air_conditioning(30,true,20);
