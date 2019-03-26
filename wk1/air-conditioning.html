@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var air_conditioning = function(currentTemp, isFunctional, desiredTemp){
+            if(isFunctional == true && (currentTemp > desiredTemp)){
+                console.log("Turn on the A/C Please");
+
+            }
+            if(isFunctional == false && (currentTemp > desiredTemp)){
+                console.log("Fix the A/C now! It's hot!");
+
+            }
+            if(isFunctional == false && (currentTemp < desiredTemp)){
+                console.log("Fix the A/C whenever you have the chance... It's cool...");
+            }
+        }
+    
+    //air_conditioning(30,true,25);
+    //air_conditioning(30,false,25);
+    air_conditioning(22,false,30);
+    
+    </script>
+    
+
+
+
+</body>
+</html>
