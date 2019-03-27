@@ -32,40 +32,37 @@
         "Sanctimonial Artifacts","Traveling Abroad","Your Mom","Billionaires","Happy Hours","Ugg Boots","The Homeless","Blacking Out",
         "Red Wine","Happy Families","Social Outcasts","Surgeons","Pounding Jagger Bombs","Textbooks","Coffee Shops","Baristas"];
 
-        var index1;
-        var index2;
+        var startup;
 
-        var genIndex = function () {
-            index1 = Math.floor(Math.random() * thisArray.length);
-            index2 = Math.floor(Math.random() * thatArray.length);
+        var generateStartup = function () {
+            var index1 = Math.floor(Math.random() * thisArray.length);
+            var index2 = Math.floor(Math.random() * thatArray.length);
+            startup = thisArray[index1] + ' for ' + thatArray[index2];
+            //console.log('Startup is: ' + startup);
 
         }
 
         var printStartup = function () {
-            genIndex();
-            console.log(thisArray[index1] + ' for ' + thatArray[index2]);
+            generateStartup();
+            console.log(startup);
         }
         
         printStartup();
 
-
         console.log('##############');
+
         var newArray = [];
-        var startup;
-
-        for (var i = 0; i < 5; i++) {
-            genIndex();
-            startup = thisArray[index1] + ' for ' + thatArray[index2];
-            //console.log('Startup is: ' + startup);
+    
+        while (newArray.length < 5) {
+            generateStartup();
             newArray.push(startup);
-        }
-
-        if (newArray.length == 5) {
-            for(var i = 0; i < newArray.length; i++) {
-                console.log(i+1 + '. ' + newArray[i]);
+            if (newArray.length == 5) {
+                for(var i = 0; i < newArray.length; i++) {
+                    console.log(i+1 + '. ' + newArray[i]);
+                }
             }
-
         }
+
 
 
 
