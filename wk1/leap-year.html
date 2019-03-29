@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var leapYear;
+        var isLeapYear;
+        
+        var checkLeapYear = function (year) {
+            if ((year%4 == 0) && (year%100 != 0)) {
+                //isLeapYear = true;
+                //return year;
+                console.log(year);
+            }
+            else if (year%400 == 0){
+                //isLeapYear == true;
+                //return year;
+                console.log(year);
+            }
+            
+            else {
+                    //isLeapYear == false;
+                //return year;
+
+            }
+            
+
+        }
+
+        
+
+        for (var year = 1919; year < 2020; year++) {
+            //console.log(year);
+
+            /*
+            leapYear = checkLeapYear(year);
+            
+            if (isLeapYear == true){
+
+                console.log(leapYear);
+            }
+            //isLeapYear = false;
+            */
+
+            checkLeapYear(year);
+
+        }
+
+
+    </script>
+
+
+
+</body>
+</html>
