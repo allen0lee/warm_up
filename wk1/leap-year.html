@@ -33,8 +33,6 @@
 
         }
 
-        
-
         for (var year = 1919; year < 2020; year++) {
             //console.log(year);
 
@@ -52,12 +50,33 @@
 
         }
 
+        var count = 0;
 
         for(var num = 1; num <= 200; num++) {
             if(num%7 == 0) {
                 console.log(num);
             }
+            if(num%2 != 0) {
+                if(count%2 != 0) {
+                    console.log(`${num} is second odd number.`);
+                }
+                count++;
+            }
         }
+  
+        /*
+        for(var num = 1; num <= 200; num++) {
+            if(num%2 != 0) {
+                if(count%2 != 0) {
+                    console.log(`${num} is second odd number.`);
+                }
+                count++;
+            }
+        }
+        */
+
+
+        console.log('#####################');
 
         var i = 0;
         for(var num = 1; num <= 200; num++) {
@@ -69,8 +88,6 @@
 
             }        
         }
-
-
 
     </script>
 
