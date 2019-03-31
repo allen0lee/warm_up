@@ -15,7 +15,7 @@ var wordReverse = function(inputString) {
 var checkPalindrome = function(inputString) {
     /*
     for(var i = 0; i < inputString.length; i++) {
-        if(inputString.charAt(i) == wordReverse(inputString).charAt(i)) {
+        if(inputString.charAt(i) == inputString.charAt(inputString.length - 1 - i)) {
             console.log(`${inputString} is a palindrome`);
             return true;
         } else {
@@ -24,7 +24,7 @@ var checkPalindrome = function(inputString) {
         }     
     }
     */
-
+    
     if(inputString == wordReverse(inputString)) {
         console.log(`${inputString} is a palindrome`);
         return true;
@@ -32,7 +32,8 @@ var checkPalindrome = function(inputString) {
     else {
         console.log(`${inputString} is not a palindrome`);
         return false;
-    }  
+    }
+
 }
 
 wordReverse('abut');
