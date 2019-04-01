@@ -17,7 +17,7 @@ var checkPalindrome = function(inputString) {
     for(var i = 0; i < inputString.length; i++) {
         if(inputString.charAt(i) == inputString.charAt(inputString.length - 1 - i)) {
             console.log(`${inputString} is a palindrome`);
-            return true;
+            return true;                 //don't use return in loop, only do one iteration and exit function
         } else {
             console.log(`${inputString} is not a palindrome`);
             return false;
