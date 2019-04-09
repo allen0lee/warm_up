@@ -1,0 +1,9 @@
+div {
+    border: 1px solid black;
+    height: 100px;
+    width: 100px;
+}
+
+.all-clicked {
+    background-color: green;
+}
