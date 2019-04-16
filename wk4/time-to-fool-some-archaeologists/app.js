@@ -1,25 +1,29 @@
-var fakeMap = [[], [], [], [], []];
+//var fakeMap = [[], [], [], [], []];
 
-// var fakeMap = [];
-// var mapRow = [];
+var fakeMap = [];
 
 
 var makeFakeMap = function(rowIndex, columnIndex) {
-    // for(var j = 0; j < columnIndex; j++) {
-    //     mapRow.push('A');
-    // }  
+    for(var i = 0; i < rowIndex; i++) {
+        fakeMap.push([]);
+    }
 
-    // for(var i = 0; i < rowIndex; i++) {
-    //     fakeMap.push(mapRow);
-    // }
+    for(var i = 0; i < columnIndex; i++) {
+        for(var j = 0; j < fakeMap.length; j++) {
+            fakeMap[j].push('A');
+        } 
+    }
+
+
 
     var positionX = Math.floor(Math.random() * columnIndex);
     var randomRowIndex = Math.floor(Math.random() * rowIndex);
-    for(var i = 0; i < 5; i++) {
-        for(var j = 0; j < columnIndex; j++) {
-            fakeMap[j].push('A');
-        }  
-    }
+
+    //for(var i = 0; i < rowIndex; i++) {
+    //     for(var j = 0; j < columnIndex; j++) {
+    //         fakeMap[j].push('A');
+    //     }  
+    // }
  
     fakeMap[randomRowIndex].splice(positionX, 1, 'X'); //replace element in array
 
