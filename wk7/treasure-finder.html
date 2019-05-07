@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+<script>
+// problem: find the location of "X" in a 2-dimension array 
+var map1 = [
+["A","A","A","A","A"],
+["A","A","A","A","A"],
+["A","A","X","A","A"],
+["A","A","A","A","A"],
+["A","A","A","A","A"]
+];
+
+var map2 = [
+["A","A","A","A","A"],
+["A","A","A","A","A"],
+["A","A","A","A","A"],
+["A","A","A","A","A"],
+["A","X","A","A","A"]
+];
+
+var map3 = [
+["A","A","A","A","A"],
+["A","A","V","A","A"],
+["A","A","A","V","A"],
+["v","v","V","v","X"],
+["A","V","A","A","A"]
+];
+
+var map4 = [
+["A","A","A","A","A"],
+["A","A","V","A","A"],
+["A","A","A","V","A"],
+["v","v","V","v","A"],
+["X","V","A","A","A"]
+];
+
+var treasureFinder = function(map, treasure) {
+    var treasureY;
+    var treasureX;
+    var museum = ["X", "G", "H"];
+    map.forEach(mapX => {
+        mapYIndex = mapX.indexOf(treasure);
+        if(mapYIndex !== -1) {
+            treasureY = mapYIndex;
+            treasureX = map.indexOf(mapX);
+        }
+    });
+    if(museum.indexOf(treasure) == -1) {
+        console.log("that doesnt belong in a museum!");
+    } else {
+        console.log(`[${treasureX}, ${treasureY}]`);
+    }
+}
+
+treasureFinder(map1, "X");
+treasureFinder(map2, "X");
+treasureFinder(map3, "X");
+treasureFinder(map4, "X");
+console.log("------------");
+
+var holyGrailMap = [
+["v","v","V","v","S","S"],
+["v","v","V","v","S","S"],
+["v","v","V","v","S","S"],
+["v","v","V","v","S","S"],
+["v","v","G","v","S","S"],
+["v","v","H","v","S","S"],
+["v","v","V","v","S","S"],
+["A","V","A","A","A","S"]
+];
+
+treasureFinder(holyGrailMap, "G") // should return [4, 2];
+treasureFinder(holyGrailMap, "H") // should return [5, 2];
+treasureFinder(holyGrailMap, "H") // should return [5, 2];
+
+treasureFinder(holyGrailMap, "V") // should return 'that doesnt belong in a museum!';
+
+</script>
