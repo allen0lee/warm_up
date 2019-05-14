@@ -70,9 +70,9 @@ require 'pry'
     {:suit => 'Spade', :value => "Ace"}
 ]
 
-def remove_card(card) 
-    @cards.delete(card)
-end
+# def remove_card(card) # burn cards method
+#     @cards.delete(card)
+# end
 
 
 
@@ -81,39 +81,55 @@ end
 
 # p $suits.product($cards)
 
+
 def display_cards(num_of_players)
-    your_card_one = @cards.sample
-    remove_card(your_card_one)
-    your_card_two = @cards.sample
-    remove_card(your_card_two)
+    # your_card_one = @cards.sample
+    # remove_card(your_card_one)
+    # your_card_two = @cards.sample
+    # remove_card(your_card_two)
+
+    @cards.shuffle
+    your_card_one = @cards.pop
+    your_card_two = @cards.pop
 
     puts "You hand: #{your_card_one[:value]} of #{your_card_one[:suit]}, #{your_card_two[:value]} of #{your_card_two[:suit]} "
 
     2.upto(num_of_players) do |num_of_players|
-        cpu_card_one = @cards.sample
-        remove_card(cpu_card_one)
-        cpu_card_two = @cards.sample
-        remove_card(cpu_card_two)
+        # cpu_card_one = @cards.sample
+        # remove_card(cpu_card_one)
+        # cpu_card_two = @cards.sample
+        # remove_card(cpu_card_two)
+
+        cpu_card_one = @cards.pop
+        cpu_card_two = @cards.pop
 
         puts "CPU #{num_of_players - 1} Hand: #{cpu_card_one[:value]} of #{cpu_card_one[:suit]}, #{cpu_card_two[:value]} of #{cpu_card_two[:suit]}"
     end
 
-    flop_one = @cards.sample
-    remove_card(flop_one)
-    flop_two = @cards.sample
-    remove_card(flop_two)
-    flop_three = @cards.sample
-    remove_card(flop_three)
+    # flop_one = @cards.sample
+    # remove_card(flop_one)
+    # flop_two = @cards.sample
+    # remove_card(flop_two)
+    # flop_three = @cards.sample
+    # remove_card(flop_three)
+
+    flop_one = @cards.pop
+    flop_two = @cards.pop
+    flop_three = @cards.pop
 
     puts "Flop: #{flop_one[:value]} of #{flop_one[:suit]}, #{flop_two[:value]} of #{flop_two[:suit]}, #{flop_three[:value]} of #{flop_three[:suit]}"
     
-    turn = @cards.sample
-    remove_card(turn)
+    # turn = @cards.sample
+    # remove_card(turn)
+
+    turn = @cards.pop
     
     puts "Turn: #{turn[:value]} of #{turn[:suit]}"
 
-    river = @cards.sample
-    remove_card(river)
+    # river = @cards.sample
+    # remove_card(river)
+
+    river = @cards.pop
 
     puts "River: #{river[:value]} of #{river[:suit]}"
 end
