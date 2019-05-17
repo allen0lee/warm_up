@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+    <ul class="accordion">
+        <li class="menu-item">
+            <a class="menu-head">Web Design</a>
+            <ul class="panel hide">
+                <li>JavaScript</li>
+                <li>jQuery</li>
+                <li>Ruby</li>
+            </ul>
+        </li>
+
+        <li class="menu-item">
+            <a class="menu-head">Coding</a>
+        </li>
+
+        <li class="menu-item">
+            <a class="menu-head">Devices</a>
+            <ul class="panel hide">
+                <li>JavaScript</li>
+                <li>jQuery</li>
+                <li>Ruby</li>
+            </ul>
+        </li>
+
+        <li class="menu-item">
+            <a class="menu-head">Global</a>
+            <ul class="panel hide">
+                <li>JavaScript</li>
+                <li>jQuery</li>
+                <li>Ruby</li>
+            </ul>
+        </li>
+    </ul>
+
+  
+    <script>
+        var menuItems = document.querySelectorAll('.menu-item')
+        var menuHeads = document.querySelectorAll('.menu-head')
+        var panels = document.querySelectorAll('.panel')
+
+        var handleClick = event => {
+            console.log('clicked')
+            var menuClicked = event.target.closest('li')
+            // hide all menus
+            panels.forEach(panel => {
+                if (menuClicked.querySelector('ul') !== panel) {
+                panel.classList.add('hide')
+                }
+            })
+            // expand / collapse clicked menu
+            panel = menuClicked.querySelector('.panel')
+
+            // panel && panel.classList.toggle('hide')
+            if (panel) {
+                panel.classList.toggle('hide')
+            }
+        }
+
+        menuHeads.forEach(menuHead => menuHead.addEventListener('click', handleClick))
+
+    </script>
+</body>
+</html>
