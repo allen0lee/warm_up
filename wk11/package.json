@@ -1,0 +1,14 @@
+{
+  "name": "wk11",
+  "version": "1.0.0",
+  "description": "",
+  "main": "find-duplicate.js",
+  "scripts": {
+    "test": "jest --watchAll"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}
